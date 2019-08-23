@@ -1,0 +1,44 @@
+package Controller;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import DAL.UserDAL;
+import Model.Usuario;
+
+@RestController
+public class LoginController {
+	
+	private UserDAL acesso;
+
+	public LoginController() {
+		this.acesso = UserDAL.newInstance();
+	}
+	
+	@PostMapping("/auth")
+	public ResponseEntity<String> Autenticar(@RequestBody Usuario info) {
+		if(!info.login.isEmpty() && info.login != null || !info.senha.isEmpty() && info.senha != null) {
+			//outras validações depois ...
+			
+			return acesso.validateUser(info);
+		}
+		
+		return ResponseEntity.noContent().build();
+		
+		
+	}
+	
+	@PostMapping("/registrar")
+	public ResponseEntity<String> cadastrar(@RequestBody Usuario info){
+		//necessario criar validações para verificar se há algo nulo no objeto ...
+		try{
+			acesso.insert(info);
+			return ResponseEntity.ok("Sucesso!!");
+		}catch(Exception ex) {
+			throw ex;
+		}
+	}
+
+}

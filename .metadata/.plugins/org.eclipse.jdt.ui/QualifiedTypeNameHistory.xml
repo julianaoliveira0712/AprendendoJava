@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.lang.Override"/>
+<fullyQualifiedTypeName name="exemplo_aluno.AlunoFundamental"/>
+<fullyQualifiedTypeName name="br.com.bandtec.AgendaDeObjetivo.controller.LoginControllerTest"/>
+<fullyQualifiedTypeName name="br.com.bandtec.AgendaDeObjetivo.controler.LoginController"/>
+<fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
+<fullyQualifiedTypeName name="org.junit.Test"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
+<fullyQualifiedTypeName name="Database.Database"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
+<fullyQualifiedTypeName name="Model.Usuario"/>
+<fullyQualifiedTypeName name="Controller.LoginController"/>
+<fullyQualifiedTypeName name="DAL.UserDAL"/>
+<fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
+<fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.SpringBootApplication"/>
+<fullyQualifiedTypeName name="ExemploInterface.Tributavel"/>
+<fullyQualifiedTypeName name="Vendavel"/>
+<fullyQualifiedTypeName name="Livro"/>
+<fullyQualifiedTypeName name="Servico"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+</qualifiedTypeNameHistroy>

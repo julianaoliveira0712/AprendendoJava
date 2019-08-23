@@ -1,0 +1,47 @@
+package DAL;
+
+import org.springframework.http.ResponseEntity;
+
+import Database.Database;
+import Model.Usuario;
+
+public class UserDAL implements IDAL<Usuario>{
+	private Database databaseHelper;
+	
+	public UserDAL() {
+		databaseHelper = Database.getDatabase();
+	}
+	
+	@Override
+	public Usuario get() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void update(Usuario obj) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void insert(Usuario obj) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public ResponseEntity<String> validateUser(Usuario obj) {
+		return ResponseEntity.ok("Usuario validado com sucesso");
+	}
+
+	public static UserDAL newInstance() {
+		return new UserDAL();
+	}
+
+}

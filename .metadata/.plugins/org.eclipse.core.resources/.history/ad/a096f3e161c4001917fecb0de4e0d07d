@@ -1,0 +1,42 @@
+package DatabaseHelper;
+
+public class Database{
+	
+	private String connectionString;
+	
+	//public T connection;
+	
+	public static Database getDatabase() {
+		return new Database();
+	}
+	
+	public static Database getDatabase(String connectionString) {
+		return new Database(connectionString);
+	}
+	
+	public void openConnection() {
+		//implementar depois
+	}
+	
+	public void closeConnection(){
+		//implementar dps
+	}
+	
+	public Database() {
+		this.connectionString = ""; //string de conexão
+		//instanciar uma conexão abaixo com o mongo
+		
+	}
+	
+	public Database(String connectionString) {
+		this.connectionString = connectionString;
+		//instanciar a conexão abaixo ...
+	}
+	
+	public void executeQuery() {//verificar o tipo de parametro compativel para o mongo
+		
+	}
+	
+	
+	
+}

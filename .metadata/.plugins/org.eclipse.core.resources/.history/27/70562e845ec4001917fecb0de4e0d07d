@@ -1,0 +1,27 @@
+package Controller;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import DAL.UserDAL;
+import Model.Usuario;
+
+@RestController
+public class LoginController {
+
+	@PostMapping("/auth")
+	public ResponseEntity<String> Autenticar(@RequestBody Usuario info) {
+		if(!info.login.isEmpty() && info.login != null || !info.senha.isEmpty() && info.senha != null) {
+			//outras validações depois ...
+			
+			UserDAL acess = new UserDAL();
+			return acess.validateUser(info);
+		}
+		
+		return ResponseEntity.noContent().build();
+		
+		
+	}
+}

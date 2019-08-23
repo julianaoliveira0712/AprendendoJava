@@ -1,0 +1,17 @@
+package ModelHelper;
+
+public class Usuario {
+	public String login;
+	
+	public String senha;
+	
+	public String nome = null;
+	
+	public String idade = null;
+	
+	public String email = null;
+	
+	public String telefone = null;
+	
+	
+}

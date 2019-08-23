@@ -1,0 +1,11 @@
+package DAL;
+
+import Database.Database;
+
+public class LoginDal {
+	private Database databaseHelper;
+	
+	public LoginDal() {
+		this.databaseHelper = Database.getDatabase();
+	}
+}

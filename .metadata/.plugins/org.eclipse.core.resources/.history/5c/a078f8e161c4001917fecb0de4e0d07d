@@ -1,0 +1,12 @@
+package DALHelper;
+
+public interface IDAL<T> {
+	
+	T get();
+	
+	void update(T obj);
+	
+	void delete (int id);
+	
+	void insert (T obj);
+}
