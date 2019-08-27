@@ -1,0 +1,20 @@
+http= protocolo de comunicação na web( sistemas)
+
+para que exista uma comunicação é necessário servidor e cliente
+
+o protocolo http deve ter request e response
+
+uma requisição é composta do enderreço, porta, verbo, body, header
+
+e a resposrta de um pedido é composta por status code e talvez o body
+
+os verbos principais são get,post,put,delete
+
+o front se comunica com o back com o content type, rest e http
+
+responseEntity é a resposta do http
+
+
+
+
+
