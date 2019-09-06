@@ -12,11 +12,14 @@ import java.util.ArrayList;
  * Description: ...
  * 
  * @version 1.0.0
- * @author JULIANASOU, 5 de set de 2019, 09:07:31
+ * @author JULIANASOU, 6 de set de 2019, 09:39:30
  */// </editor-fold>
-class Scanenr {
+public class Jogador {
     
     //<editor-fold defaultstate="collapsed" desc="attributes...">
+    String nickname;
+    Canoa canoa;
+    Rio rio;
     
     //    <editor-fold defaultstate="collapsed" desc="main attributes...">
     
@@ -63,5 +66,11 @@ class Scanenr {
     //    </editor-fold>
     
     //</editor-fold>
+
+    public Jogador(String nickname, Canoa canoa, Rio rio) {
+        this.nickname = nickname;
+        this.canoa = canoa;
+        this.rio = rio;
+    }
         
 }//class

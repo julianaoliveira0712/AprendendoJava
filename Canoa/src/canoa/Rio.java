@@ -8,92 +8,83 @@ import java.util.ArrayList;
 // <editor-fold defaultstate="collapsed" desc="documentation...">
 /**
  * Objective: ...
- * 
+ *
  * Description: ...
- * 
+ *
  * @version 1.0.0
- * @author JULIANASOU, 6 de set de 2019, 08:24:53
+ * @author JULIANASOU, 6 de set de 2019, 09:40:49
  */// </editor-fold>
-public class Canoa {
+public class Rio {
 
     //<editor-fold defaultstate="collapsed" desc="attributes...">
-    String nome;
-    boolean[] partes;
-
     //    <editor-fold defaultstate="collapsed" desc="main attributes...">
-    
+    boolean[] partes;
+    Canoa canoa;
+    int ultimaPosicaoCanoa;
     //    </editor-fold>
-    
-    //    <editor-fold defaultstate="collapsed" desc="constants attributes...">
-    
-    //    </editor-fold>
-    
-    //    <editor-fold defaultstate="collapsed" desc="static attributes...">
-    
-    //    </editor-fold>
-    
-    //    <editor-fold defaultstate="collapsed" desc="auxiliary attributes...">
-    
-    //    </editor-fold>
-    
-    //</editor-fold>
-    
-    //<editor-fold defaultstate="collapsed" desc="constructors...">
 
-    public Canoa(String nome, int tamanho) {
-        this.nome = nome;
-        this.partes = new boolean[tamanho];
+    //    <editor-fold defaultstate="collapsed" desc="constants attributes...">
+    //    </editor-fold>
+    //    <editor-fold defaultstate="collapsed" desc="static attributes...">
+    //    </editor-fold>
+    //    <editor-fold defaultstate="collapsed" desc="auxiliary attributes...">
+    //    </editor-fold>
+    //</editor-fold>
+    //<editor-fold defaultstate="collapsed" desc="constructors...">
+    public Rio(int tamanhoRio, Canoa canoa) {
+        partes = new boolean[tamanhoRio];
+        this.canoa = canoa;
     }
-    
-   
+
     //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="methods...">
-
-
-    
     //    <editor-fold defaultstate="collapsed" desc="getter and setter methods...">
-    public void setNome(String nome) {    
-        this.nome = nome;
-    }
-    
-      public String getNome(){
-        return nome;
-    }
-
     //    </editor-fold>
     //    <editor-fold defaultstate="collapsed" desc="override methods...">
     //    </editor-fold>
     //    <editor-fold defaultstate="collapsed" desc="auxiliary methods...">
+    private void reset(){
+        for (int i = 0; i < tamanho(); i++) {
+            partes[i]= false;
+        }
+    }
     //    </editor-fold>
     //    <editor-fold defaultstate="collapsed" desc="static methods...">
     //    </editor-fold>
     //    <editor-fold defaultstate="collapsed" desc="main methods...">
+    
     public Integer tamanho() {
         return partes.length;
     }
-    
-    public boolean estaDestruida(){
-//        int cont = partes.length;
-        boolean existePedaco = false;
-        for (int cont = 0; cont < partes.length; cont++) {
-//            if(partes[i] == false){
-//                cont--;
-//            }
-//            existePedaco = existePedaco | partes[cont];
-            existePedaco |= partes[cont];
+
+    public void posicionarCanoaNoRio(int novaPosicao) {
+        ultimaPosicaoCanoa = novaPosicao;
+        reset();
+        if (ultimaPosicaoCanoa >= 0 && ultimaPosicaoCanoa < tamanho()) {
+            for (int j = 0; j < canoa.tamanho(); j++) {
+                partes[novaPosicao] = canoa.partes[j];
+                novaPosicao++;
+            }
         }
-        return existePedaco;
 
     }
     
-    public void destruirParte( int indice){
-        if(indice >= 0 && indice < partes.length){
-            partes[indice] = false;
+    public void receberTiro(int posicaoTiro){
+        if (posicaoTiro >= 0 && posicaoTiro < tamanho()) {
+            partes[posicaoTiro]=false;
         }
     }
     
+    public void atualizarCanoa() {
+        int contParteCanoa=0;
+        for (int i = 0; i < tamanho() ;i++) {
+            if(partes[i] != false){
+                canoa.partes[contParteCanoa] = partes[i];
+                contParteCanoa++;
+            }
+        }
+    }
+
     //    </editor-fold>
     //</editor-fold>
-   
-        
 }//class
